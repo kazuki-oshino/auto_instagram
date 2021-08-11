@@ -5,7 +5,6 @@ import settings
 
 
 class InstagramCommon:
-
     driver: webdriver
     logger = None
     username = ''
@@ -29,3 +28,10 @@ class InstagramCommon:
         time.sleep(1)
         self.logger.info('instagramへのアクセスを完了しました。')
 
+    def log_out_instagram(self):
+        self.logger.info('instagramをログアウトします。')
+        self.driver.find_element_by_xpath(
+            '//*[@id="react-root"]/section/nav/div[2]/div/div/div[3]/div/div[5]/span/img').click()
+        time.sleep(1)
+        self.driver.find_element_by_xpath('//div[text()="ログアウト"]').click()
+        time.sleep(10)
