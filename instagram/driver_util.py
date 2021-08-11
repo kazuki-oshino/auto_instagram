@@ -17,3 +17,6 @@ class DriverUtil:
 
     def get_driver(self):
         return self.driver
+
+    def __del__(self):
+        self.driver.quit()
