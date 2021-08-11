@@ -6,7 +6,7 @@ import settings
 
 class InstagramCommon:
 
-    driver = None
+    driver: webdriver
     logger = None
     username = ''
     password = ''
@@ -24,6 +24,8 @@ class InstagramCommon:
         self.driver.find_element_by_name('username').send_keys(self.username)
         time.sleep(1)
         self.driver.find_element_by_name('password').send_keys(self.password)
+        time.sleep(1)
+        self.driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]/button').click()
         time.sleep(1)
         self.logger.info('instagramへのアクセスを完了しました。')
 
