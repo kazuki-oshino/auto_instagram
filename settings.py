@@ -7,3 +7,4 @@ load_dotenv(dotenv_path)
 
 USERNAME = os.environ.get("USERNAME")
 PASSWORD = os.environ.get("PASSWORD")
+LOG_DIR = os.environ.get("LOG_DIR")
