@@ -13,12 +13,18 @@ if __name__ == '__main__':
     instagram_common = instagram.instagram_common.InstagramCommon(driver_util.get_driver(), logger)
     instagram_common.access_instagram()
 
-    # 自動いいね処理
-    auto_like = instagram.instagram_auto_like.InstagramAutoLike(driver_util.get_driver(), logger)
-    auto_like.auto_like(settings.TARGET_TAG_DICT)
+    mode = 1
+    if mode == 1:
+        # 自動いいね処理
+        auto_like = instagram.instagram_auto_like.InstagramAutoLike(driver_util.get_driver(), logger)
+        auto_like.auto_like(settings.TARGET_TAG_DICT)
+    else:
+        # フォロワー洗い出し処理
+        follower = instagram.instagram_follower.InstagramFollower(driver_util.get_driver(), logger)
+        follower.access_my_page()
+        test = follower.get_follower()
 
     # ログアウト
+    # TODO 実施した機能ごとに処理が変わりそう
     instagram_common.log_out_instagram()
 
-    # quit driver
-    del driver_util

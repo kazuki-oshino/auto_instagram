@@ -19,4 +19,5 @@ class DriverUtil:
         return self.driver
 
     def __del__(self):
+        # TODO(kazuki): デバッグモードを設けたい
         self.driver.quit()
