@@ -1,5 +1,6 @@
 import instagram
 import log_util
+import csv_util
 import settings
 
 if __name__ == '__main__':
@@ -17,7 +18,7 @@ if __name__ == '__main__':
     if mode == 1:
         # 自動いいね処理
         auto_like = instagram.instagram_auto_like.InstagramAutoLike(driver_util.get_driver(), logger)
-        auto_like.auto_like(settings.TARGET_TAG_DICT)
+        auto_like.auto_like(csv_util.make_tag_dict())
     else:
         # フォロワー洗い出し処理
         follower = instagram.instagram_follower.InstagramFollower(driver_util.get_driver(), logger)
