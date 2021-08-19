@@ -3,9 +3,10 @@ import log_util
 import csv_util
 import settings
 
-if __name__ == '__main__':
+
+def main():
     # デバッグモード
-    DEBUG_MODE = False
+    debug_mode = False
 
     # setting logger
     logger = log_util.setup_logger(settings.LOG_DIR)
@@ -14,7 +15,7 @@ if __name__ == '__main__':
     driver_util = instagram.driver_util.DriverUtil()
 
     # Instagramへのアクセス
-    instagram_common = instagram.instagram_common.InstagramCommon(driver_util.get_driver(), logger, debug=DEBUG_MODE)
+    instagram_common = instagram.instagram_common.InstagramCommon(driver_util.get_driver(), logger, debug=debug_mode)
     instagram_common.access_instagram()
 
     mode = 1
@@ -32,3 +33,6 @@ if __name__ == '__main__':
     # TODO 実施した機能ごとに処理が変わりそう
     instagram_common.log_out_instagram()
 
+
+if __name__ == '__main__':
+    main()
