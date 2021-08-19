@@ -4,6 +4,9 @@ import csv_util
 import settings
 
 if __name__ == '__main__':
+    # デバッグモード
+    DEBUG_MODE = False
+
     # setting logger
     logger = log_util.setup_logger(settings.LOG_DIR)
 
@@ -11,7 +14,7 @@ if __name__ == '__main__':
     driver_util = instagram.driver_util.DriverUtil()
 
     # Instagramへのアクセス
-    instagram_common = instagram.instagram_common.InstagramCommon(driver_util.get_driver(), logger, debug=False)
+    instagram_common = instagram.instagram_common.InstagramCommon(driver_util.get_driver(), logger, debug=DEBUG_MODE)
     instagram_common.access_instagram()
 
     mode = 1
