@@ -10,11 +10,15 @@ class InstagramCommon:
     username = ''
     password = ''
 
-    def __init__(self, driver: webdriver, logger):
+    def __init__(self, driver: webdriver, logger, debug=False):
         self.driver = driver
         self.logger = logger
-        self.username = settings.USERNAME
-        self.password = settings.PASSWORD
+        if debug:
+            self.username = settings.DEBUG_USERNAME
+            self.password = settings.DEBUG_PASSWORD
+        else:
+            self.username = settings.USERNAME
+            self.password = settings.PASSWORD
 
     def access_instagram(self):
         self.logger.info('instagramへのアクセスを開始します。')

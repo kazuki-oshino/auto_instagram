@@ -11,7 +11,7 @@ if __name__ == '__main__':
     driver_util = instagram.driver_util.DriverUtil()
 
     # Instagramへのアクセス
-    instagram_common = instagram.instagram_common.InstagramCommon(driver_util.get_driver(), logger)
+    instagram_common = instagram.instagram_common.InstagramCommon(driver_util.get_driver(), logger, debug=False)
     instagram_common.access_instagram()
 
     mode = 1
