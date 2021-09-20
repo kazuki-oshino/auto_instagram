@@ -55,7 +55,7 @@ class InstagramAutoLike:
         while self.current_tag_count < count:
             time.sleep(15)
             like_button = self.driver.find_element_by_xpath(
-                '/html/body/div[6]/div[2]/div/article/div[3]/section[1]/span[1]/button')
+                '/html/body/div[6]/div[2]/div/article/div/div[2]/div/div[2]/section[1]/span[1]/button')
             target_svg = like_button.find_elements_by_tag_name("svg")
             target_svg_label = target_svg[0].get_attribute("aria-label")
             if target_svg_label == 'いいね！':
@@ -64,7 +64,6 @@ class InstagramAutoLike:
                 self.logger.info(f'いいね！しました。{self.done_count + self.current_tag_count}回目')
                 time.sleep(15)
             self.driver.find_element_by_xpath('/html/body/div[6]/div[1]/div/div/a[2]').click()
-
         self.done_count += self.current_tag_count
 
         # 投稿を閉じる
