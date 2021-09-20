@@ -5,7 +5,11 @@ csv_path_dict = {
     1: '/Users/kazuki/PycharmProjects/auto_instagram/tag/auto_like_tag1.csv',
     2: '/Users/kazuki/PycharmProjects/auto_instagram/tag/auto_like_tag2.csv',
     3: '/Users/kazuki/PycharmProjects/auto_instagram/tag/auto_like_tag3.csv',
-    4: '/Users/kazuki/PycharmProjects/auto_instagram/tag/auto_like_tag4.csv'
+    4: '/Users/kazuki/PycharmProjects/auto_instagram/tag/auto_like_tag4.csv',
+    5: '/Users/kazuki/PycharmProjects/auto_instagram/tag/auto_like_tag_holi1.csv',
+    6: '/Users/kazuki/PycharmProjects/auto_instagram/tag/auto_like_tag_holi2.csv',
+    7: '/Users/kazuki/PycharmProjects/auto_instagram/tag/auto_like_tag_holi3.csv',
+    8: '/Users/kazuki/PycharmProjects/auto_instagram/tag/auto_like_tag_holi4.csv'
 }
 
 
